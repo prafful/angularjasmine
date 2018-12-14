@@ -1,6 +1,8 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { VoteComponent } from "./vote/vote/vote.component";
+
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -9,7 +11,8 @@ describe('AppComponent', () => {
         RouterTestingModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        VoteComponent
       ],
     }).compileComponents();
   }));
@@ -23,13 +26,13 @@ describe('AppComponent', () => {
   it(`should have as title 'jasmineangular'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('jasmineangular');
+    expect(app.title).toEqual('Jasmine Angular');
   });
 
-  it('should render title in a h1 tag', () => {
+  it('should render title in a h2 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to jasmineangular!');
+    expect(compiled.querySelector('h2').textContent).toEqual('Welcome to Jasmine Angular!');
   });
 });
